@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //两种方式生成数组
+        //数组中最好只保存同一类型的数据
+        var arr = [1, 2, 4, 5, 9, 10, 33, 21, 45, 23];
+        var brr = new Array(1, 2, 4, 5);
+
+        // alert(arr);         //获取整个数组
+        // alert(arr[2]);      //获取某一个元素
+        // arr.length = 1;  //设置数组长度,相当于快速清空数组
+        // alert(arr);
+
+        //数组操作: push和pop,都是从尾部开始添加或删除元素
+        // arr.push(9);
+        // alert(arr);
+        // arr.pop();
+        // alert(arr);
+
+        //shift,从头部开始删除元素
+        // arr.shift();
+        // alert(arr);
+        // arr.unshift(10);        //往头部添加元素
+        // alert(arr);
+
+        //删除:splice(起点,长度)
+        // arr.splice(2, 2)            //从下标是2开始的元素一直往后删除三个
+        //插入:splice(起点,长度,插入元素),先删除再加入.如果长度和插入元素个数一样,那么就想当与替换
+        // arr.splice(2, 0, 'a', 'b', 'c');
+        // alert(arr);
+
+        //两个数组的连接
+        // alert(arr.concat(brr));         //顺序将影响到连接结果的顺序
+
+        //用连接符将数组元素连接起来
+        // alert(arr.join('-'));
+
+        //数组排序sort,只认识字符串.如果比较数字,可以自己定义函数
+        // arr.sort();
+        // alert(arr);
+        // arr.sort(function (n1, n2) {
+        //     if (n1 < n2) {
+        //         return -1;
+        //     }
+        //     else if (n1 > n2) {
+        //         return 1;
+        //     } else {
+        //         return 0;
+        //     }
+        // });
+        //简单的写法
+        arr.sort(function (n1, n2) {
+            return n1-n2;
+        });
+        alert(arr);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

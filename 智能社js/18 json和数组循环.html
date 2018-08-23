@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var list = [1, 2, 4];
+        var json = {a: 1, b: 2, c: 4};
+        //用for循环
+        for (var i = 0; i < list.length; i++) {
+            console.log(list[i]);
+        }
+
+        //用for in
+        //数组也可以用for in来循环,json只能用这个方法,因为json没有length方法
+        for (var i in json) {
+            console.log('json ' + json[i]);
+        }
+    </script>
+</head>
+<body>
+
+</body>
+</html>

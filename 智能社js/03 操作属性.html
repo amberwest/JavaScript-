@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="text1"/>
+<input type="button" value="改变文字" onclick="setText('value', '12345678')"/>
+<script>
+    function setText(name, value) {
+        var oTxt = document.getElementById('text1');
+        //第一种操作属性的方法
+        // oTxt.value = '12345678dfghjk';
+
+        //第二种操作属性的方法
+        oTxt[name] = value;
+    }
+</script>
+</body>
+</html>

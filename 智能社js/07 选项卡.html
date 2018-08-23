@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 .active{
+            background-color: yellowgreen;
+        }
+        #div1 div{
+            width:200px;
+            height: 200px;
+            border: 1px solid #999;
+            background-color: #CCCCCC;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var oDiv=document.getElementById('div1');
+            var aBtn =oDiv.getElementsByTagName('input');
+            var aDiv=oDiv.getElementsByTagName('div');
+
+            for(var i=0; i<aBtn.length;i++)
+            {
+                //自定义index,方便点击选项卡时匹配到对应的div
+                aBtn[i].index = i;
+                aBtn[i].onclick=function ()
+                {   //先将其他的选项卡的class清除掉,再给当前选中的选项添加类名
+                    for(var i=0;i<aBtn.length;i++)
+                    {
+                        aBtn[i].className = '';
+                        aDiv[i].style.display='none';
+                    }
+                    this.className='active';
+                    //使用自定义的index
+                    aDiv[this.index].style.display='block';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <input class="active" type="button" value="教育">
+    <input type="button" value="培训">
+    <input type="button" value="招生">
+    <input type="button" value="出国">
+    <div style="display: block">11111</div>
+    <div>22222</div>
+    <div>3333</div>
+    <div>4444</div>
+</div>
+</body>
+</html>

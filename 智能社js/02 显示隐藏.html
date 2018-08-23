@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 200px;
+            background-color: #CCC;
+            display: none;
+        }
+
+        #div2 {
+            width: 100px;
+            height: 200px;
+            border: 1px solid #CCCCCC;
+        }
+
+        .box {
+            background-color: red;
+        }
+    </style>
+    <script>
+        // 这里有两点要注意,对同一个元素要么全部使用style进行修改,要么使用className修改
+        // 因为style是行间样式,优先级最高.如果先用style修改,再用className则会失败
+        // *<标签<class<id<行间样式
+        function showHide() {
+            //点击显示或者隐藏,类似下拉菜单
+            var hide = document.getElementById('div1');
+            if (hide.style.display == 'none') {
+                hide.style.display = 'block';
+            } else {
+                hide.style.display = 'none';
+            }
+        }
+
+        function toRed() {
+            //点击按钮时,给div1这个盒子添加类/背景色
+            var oB = document.getElementById('div2');
+            //html怎么写,JS就怎么写,但是这里使用className来代替class,是因为class是一个保留字
+            oB.className = 'box';
+        }
+    </script>
+</head>
+<body>
+<input id="btn" type="button" value="按钮" onclick="showHide()"/>
+<div id="div1"></div>
+<input id="change" type="button" value="变成红色" onclick="toRed()"/>
+<div id="div2"></div>
+</body>
+</html>

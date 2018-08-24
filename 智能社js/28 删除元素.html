@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var aA = document.getElementsByTagName('a');
+            var oUl = document.getElementById('ul1');
+            for (var i = 0; i < aA.length; i++) {
+                aA[i].onclick = function () {
+                    //删除元素节点,这里删除的是a标签的父节点li
+                    oUl.removeChild(this.parentNode);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li>2345678 <a href="javascript:;">delete</a></li>
+    <li>8994567 <a href="javascript:;">delete</a></li>
+    <li>3345568 <a href="javascript:;">delete</a></li>
+    <li>3345678 <a href="javascript:;">delete</a></li>
+    <li>8345678 <a href="javascript:;">delete</a></li>
+
+
+</ul>
+</body>
+</html>

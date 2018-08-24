@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        //在高级浏览器(chrome和IE9)中,文档碎片对提高效率的作用并不大
+        window.onload = function () {
+            var oUl = document.getElementById('ul1');
+            var oFrag = document.createDocumentFragment();
+            for (var i = 0; i < 10000; i++) {
+                var oLi = document.createElement('li');
+                oFrag.appendChild(oLi);
+            }
+            oUl.appendChild(oFrag);
+        }
+    </script>
+</head>
+<body>
+<ul id="ul1">
+
+</ul>
+</body>
+</html>

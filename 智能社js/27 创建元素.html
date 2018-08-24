@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload = function () {
+            var oBtn = document.getElementById('btn1');
+            var oTxt = document.getElementById('txt1');
+            var oUl = document.getElementById('bl1');
+            var aLi = document.getElementsByTagName('li');
+            oBtn.onclick = function () {
+                var oLi = document.createElement('li');
+                var sValue = oTxt.value;
+                //将输入值赋给oLi节点
+                oLi.innerHTML = sValue;
+                if (aLi.length > 0) {
+                    //跟appendChild类似,但是可以指定在哪个子节点之前插入
+                    //这里是在li数组的第一个之前插入,也就是每次新添加的li都会在第一个
+                    oUl.insertBefore(oLi, aLi[0]);
+                }
+                else {
+                    //将创建的子节点添加到父级节点,节点是添加到最后面去的
+                    oUl.appendChild(oLi);
+                }
+                //清空输入框
+                oTxt.value = '';
+            }
+        }
+    </script>
+</head>
+<body>
+<input id="txt1" type="text">
+<input type="button" value="按钮" id="btn1">
+<ul id="bl1">
+
+</ul>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background-color: #000000;
+        }
+
+        div img {
+            width: 50px;
+            height: 80px;
+            vertical-align: bottom;
+        }
+
+        div {
+            font-size: 50px;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        //通过Date对象获取到的时分秒是数字来的,而且当数字是小于10时,是单数显示
+        //需要将单位数字补零同时转为字符串类型
+        function toDou(n) {
+            if (n < 10) {
+                return '0' + n;
+            } else {
+                return '' + n;
+            }
+
+        }
+
+        window.onload = function () {
+            //修改图片,图片的名字跟内容要对应
+            //通过获取时间具体数字,修改图片
+            function tick() {
+                var aImg = document.getElementsByTagName('img');
+                var oDate = new Date();
+                var str = toDou(oDate.getHours()) + toDou(oDate.getMinutes()) + toDou(oDate.getSeconds());
+                for (var i = 0; i < aImg.length; i++) {
+                    aImg[i].src = 'images/' + str.charAt(i) + '.png';
+                }
+            }
+
+            //这里再次调用tick()函数是因为,每次一打开html文件,要等一次后定时器才会执行
+            tick();
+            //每秒执行一次,函数不带括号
+            setInterval(tick, 1000);
+        }
+    </script>
+</head>
+<body>
+<div>
+    <img src="images/0.png" alt="">
+    <img src="images/0.png" alt="">
+    :
+    <img src="images/0.png" alt="">
+    <img src="images/0.png" alt="">
+    :
+    <img src="images/0.png" alt="">
+    <img src="images/0.png" alt="">
+</div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>shopping-list</title>
+    <style>
+        li {
+            margin-bottom: 10px;
+        }
+        li button{
+            font-size: 8px;
+            margin-left: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<h1>My shopping list</h1>
+<div>
+    <label for="item">Enter a new item:</label>
+    <input type="text" name="item" id="item">
+    <button>Add item</button>
+</div>
+<ul>
+
+</ul>
+<script type="text/javascript">
+    var list = document.querySelector('ul');
+    var input = document.querySelector('input');
+    var button = document.querySelector('button');
+
+    button.onclick = function () {
+        var myItem = input.value;
+        input.value = "";
+        //创建元素
+        var listItem = document.createElement('li');
+        var listText = document.createElement('span');
+        var listBtn = document.createElement('button');
+
+        //添加span标签到li标签
+        listItem.appendChild(listText);
+        //添加文本到span标签
+        listText.textContent = myItem;
+        //添加button标签到li标签
+        listItem.appendChild(listBtn);
+        //添加文本到button标签
+        listBtn.textContent='Delete';
+        //添加li标签到ul标签
+        list.appendChild(listItem);
+        //点击删除标签时删除li标签
+        listBtn.onclick = function () {
+            list.removeChild(listItem);
+        };
+        //鼠标聚焦到输入框
+        input.focus();
+    }
+</script>
+</body>
+</html>

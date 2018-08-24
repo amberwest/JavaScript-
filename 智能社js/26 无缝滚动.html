@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1 {
+            width: 450px;
+            height: 178px;
+            margin: 100px auto;
+            overflow: hidden;   /*如果不好理解可以注释掉这一行,看看是怎么变化的*/
+            position: relative;
+        }
+
+        /*整个ul移动*/
+        #div1 ul {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        #div1 ul li {
+            float: left;
+            width: 108px;
+            height: 178px;
+            list-style: none;
+        }
+
+        #div1 ul li img {
+            width: 100px;
+            height: 170px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv = document.getElementById('div1');
+            var oUl = oDiv.getElementsByTagName('ul')[0];
+            var aLi = oUl.getElementsByTagName('li');
+            //添加多一组图片,滚动时不会出现断层
+            //为了方便理解,可以添加不同的图片
+            oUl.innerHTML = oUl.innerHTML + oUl.innerHTML;
+            //自动添加父类宽度,不添加则会出现图片突然消失的卡顿
+            oUl.style.width = aLi[0].offsetWidth * aLi.length + 'px';
+
+            //图片滚动函数,将整个ul向左向右移动
+            function move() {
+                //向左移动,oUl.offsetLeft一直都是负的.
+                // 当4张图片都滚动完毕,立马将图片列表拉到最左边,重新开始
+                if (oUl.offsetLeft < -oUl.offsetWidth / 2) {
+                    oUl.style.left = '0';
+                }
+                //向右滚动,Ul.offsetLeft也是负的,不过是往0方向变大
+                //这里跟上面不一样,滚动完毕,则是将图片
+                if (oUl.offsetLeft > 0) {
+                    oUl.style.left = -oUl.offsetWidth / 2 + 'px';
+                }
+                //这里是+2还是-2决定图片是向右还是向左移动
+                oUl.style.left = oUl.offsetLeft + 2 + 'px';
+            }
+
+            //开启定时器,让图片一直处于滚动状态
+            var timer = setInterval(move, 30);
+            //鼠标划过图片时,滚动暂停,也就是取消定时器
+            oDiv.onmouseover = function () {
+                clearTimeout(timer);
+            };
+            //鼠标离开图片时,开启定时器
+            oDiv.onmouseout = function () {
+                timer = setInterval(move, 30);
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1">
+    <ul>
+        <li><img src="images/1.png" alt=""></li>
+        <li><img src="images/2.png" alt=""></li>
+        <li><img src="images/3.png" alt=""></li>
+        <li><img src="images/4.png" alt=""></li>
+    </ul>
+</div>
+</body>
+</html>

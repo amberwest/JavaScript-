@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div {
+            float: left;
+            margin: 10px;
+        }
+
+        #div1 {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+
+        #div2 {
+            width: 250px;
+            height: 180px;
+            background-color: #CCCCCC;
+            display: none;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var oDiv1 = document.getElementById('div1');
+            var oDiv2 = document.getElementById('div2');
+            var timer = null;
+
+            oDiv1.onmouseover = function () {
+                //这里清除的是oDIv2的定时器
+                clearTimeout(timer);
+                oDiv2.style.display = 'block';
+            };
+
+            oDiv1.onmouseout = function () {
+                //延时500毫秒再隐藏div,这样就可以从div1到div2
+                timer = setTimeout(function () {
+                    oDiv2.style.display = 'none';
+                }, 500);
+            };
+            oDiv2.onmouseover = function () {
+                //当鼠标进入oDiv2时,取消oDiv1的定时器
+                clearTimeout(timer);
+            };
+            oDiv2.onmouseout = function () {
+                //这里的定时器是为了在两个div之间滑动时不出现闪动(盒子快速显示隐藏)
+                timer = setTimeout(function () {
+                    oDiv2.style.display = 'none';
+                }, 500);
+            }
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+<div id="div2"></div>
+</body>
+</html>

@@ -43,11 +43,10 @@
                     aImg[i].src = 'images/' + str.charAt(i) + '.png';
                 }
             }
-
-            //这里再次调用tick()函数是因为,每次一打开html文件,要等一次后定时器才会执行
-            tick();
             //每秒执行一次,函数不带括号
             setInterval(tick, 1000);
+            //这里再次调用tick()函数是因为,每次一打开html文件,要等一次后定时器才会执行
+            tick();
         }
     </script>
 </head>

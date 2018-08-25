@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            top: 100px;
+            left: 0;
+            background-color: red;
+        }
+    </style>
+    <script>
+        //运动框架：开始运动时，关闭已有定时器；把运动和停止隔开（if/else）
+        var timer = '';
+
+        function startMove() {
+            var oDiv = document.getElementById('div1');
+            //每次点击"开始运动"按钮都会新开一个定时器，所以div运动的速度也会不断增加，所以需要取消定时器
+            clearInterval(timer);
+            timer = setInterval(function () {
+                var speed = 3;
+                //offsetLeft是实际左边距离
+                if (oDiv.offsetLeft >= 300) {
+                    clearInterval(timer);
+                } else {
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+                }
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn1" value="开始运动" onclick="startMove()">
+<div id="div1"></div>
+</body>
+</html>

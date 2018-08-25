@@ -4,17 +4,16 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script>
+        //在划过之后并不能设置回原本的颜色???
         window.onload = function () {
             var oTab = document.getElementById('tab1');
             var oldColor = '';
             for (var i = 0; i < oTab.tBodies[0].rows.length; i++) {
                 oTab.tBodies[0].rows[i].onmouseover = function () {
-                    console.log(oldColor);
                     oldColor = this.style.background;
                     this.style.background = 'green';
                 };
                 oTab.tBodies[0].rows[i].onmouseout = function () {
-                    console.log(oldColor);
                     this.style.background = oldColor;
                 };
                 if (i % 2) {

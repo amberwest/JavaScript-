@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 100px;
+            left: 0;
+        }
+    </style>
+    <script>
+        var timer = null;
+
+        function startMove(iTarget) {
+            var oDiv = document.getElementById('div1');
+            timer = setInterval(function () {
+                var speed = 0;
+                //根据距离来判断速度的正负
+                if (oDiv.offsetLeft < iTarget) {
+                    speed = 7
+                } else {
+                    speed = -7;
+                }
+                //如果距离目标点足够近但不整除时就直接关闭定时器并跳到目标点，就不会出现抖动
+                if (Math.abs(iTarget - oDiv.offsetLeft) <= 7) {
+                    clearInterval(timer);
+                    oDiv.style.left = iTarget + 'px';
+                }
+                else {
+                    oDiv.style.left = oDiv.offsetLeft + speed + 'px';
+                }
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+<input type="button" id="btn1" value="到100" onclick="startMove(100)">
+<input type="button" id="btn2" value="到300" onclick="startMove(300)">
+<div id="div1"></div>
+</body>
+</html>

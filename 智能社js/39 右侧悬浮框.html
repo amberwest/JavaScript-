@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 2000px;
+        }
+
+        #div1 {
+            width: 100px;
+            height: 150px;
+            background-color: red;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+    </style>
+    <script>
+        window.onscroll = function () {
+            var oDiv = document.getElementById('div1');
+            var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+
+            //悬浮在右侧中间。可视高度-div的高度。取整是为了防止出现抖动
+            var middle = parseInt((document.documentElement.clientHeight - oDiv.offsetHeight) / 2 + scrollTop);
+            //悬浮在右侧底部
+            // startMove(document.documentElement.clientHeight - oDiv.offsetHeight + scrollTop);
+            startMove(middle);
+        };
+        var timer = null;
+
+        function startMove(iTarget) {
+            var oDiv = document.getElementById('div1');
+
+            clearInterval(timer);
+            timer = setInterval(function () {
+                var speed = (iTarget - oDiv.offsetTop) / 5;
+                speed = speed > 0 ? Math.ceil(speed) : Math.floor(speed);
+                if (oDiv.offsetTop == iTarget) {
+                    clearInterval(timer);
+                } else {
+                    oDiv.style.top = oDiv.offsetTop + speed + 'px';
+                }
+            }, 30);
+        }
+    </script>
+</head>
+<body>
+<div id="div1"></div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person() {
+    }
+
+    Person.prototype.name = 'Nick';
+    Person.prototype.age = 28;
+    Person.prototype.job = 'Doctor';
+    Person.prototype.sayName = function () {
+        console.log(this.name);
+    };
+    //person1、person2通过查找对象原型属性(Person.prototype)来调用sayName()
+    var person1 = new Person();
+    // console.log(person1.sayName == person2.sayName);
+    // console.log(Person.prototype.isPrototypeOf(person2));           //true
+
+    person1.sayName();
+    person1.name = 'T';
+
+    var person2 = new Person();
+    person2.sayName();
+
+    console.log(person1.name);      //来自实例
+    console.log(person2.name);      //来自原型
+
+    console.log(person1.hasOwnProperty('name'));        //true
+    console.log(person2.hasOwnProperty('name'));        //false，说明person2没有name这个属性，是来自原型
+
+    //原型与in操作符:只要通过对象能够访问到给定属性时返回true，无论该属性存在于实例还是原型
+    console.log('name' in person1);     //true
+    console.log('name' in person2);     //true
+
+    //in返回true，hasOwnProperty返回false，说明属性是原型中的属性
+    function hasPrototypeProperty(obj, name) {
+        return !obj.hasOwnProperty(name) && (name in obj);
+    }
+
+    var person = new Person();
+    console.log(hasPrototypeProperty(person, 'name'));  //true
+    person.name = 'L';
+    console.log(hasPrototypeProperty(person, 'name'));  //false,实例重写了name属性
+
+    var keys = Object.keys(Person.prototype);
+    console.log(keys);      //["name", "age", "job", "sayName"]
+    console.log(Object.keys(person));       //name，如果是实例调用，只返回实例属性
+    var k = Object.getOwnPropertyNames(Person.prototype);
+    console.log(k);     //["constructor", "name", "age", "job", "sayName"]获取到全部的实例属性
+
+    //3、更简单的原型语法
+    //constructor属性不再指向Person2，指向了Object构造函数
+    function Person2() {
+    }
+
+    Person2.prototype = {
+        // constructor: Person2,        //可以强行设置回适当的值，这样[[Enumerable]]为true，原生的则是不可枚举
+        name: 'Nick',
+        age: 29,
+        job: 'Doctor',
+        sayName: function () {
+            console.log(this.name);
+        }
+    };
+    var friend = new Person2();
+    console.log(friend.constructor == Person2);     //false
+    console.log(friend.constructor == Object);      //true
+
+
+</script>
+</body>
+</html>

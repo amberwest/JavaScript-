@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //创建对象方法：
+    //1、工厂模式，不能解决对象识别问题（怎么知道一个对象的类型）
+    function createPerson(name, age, job) {
+        var o = new Object();
+        o.name = name;
+        o.age = age;
+        o.job = job;
+        o.sayName = function () {
+            console.log(this.name);
+        };
+        return o;
+    }
+
+    var person1 = createPerson('Nick', 29, 'Doctor');
+
+    //2、构造函数模式，首字母要大写
+    //没有显式创建对象，直接将属性和方法赋给了this对象，也没有return语句
+    function Person(name, age, job) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+        this.sayName = function () {
+            console.log(this.name);
+        };
+    }
+
+    //通过new操作符来调用，那它就可以作为构造函数
+    //使用new来创建新对象person2，该对象是Object的实例，也是Person的实例
+    var person2 = new Person('Greg', 28, 'Doctor');
+    console.log(person2.constructor == Person);     //该对象有一个constructor（构造函数）属性
+    console.log(person2 instanceof Person);
+
+    //构造函数还可以作为普通函数来调用
+    Person('T', 27, 'Doctor');       //添加到window
+    window.sayName();       //T
+
+    //构造函数还可以在另一个对象的作用域中调用
+    var o = new Object();
+    Person.call(o, 'K', 25, 'Nurse');
+    o.sayName();
+
+</script>
+</body>
+</html>

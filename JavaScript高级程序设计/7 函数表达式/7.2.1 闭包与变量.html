@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function createFunctions() {
+        var result = new Array();
+        for (var i = 0; i < 10; i++) {
+            result[i] = function () {
+                return i;
+            };
+        }
+        return result;
+    }
+
+    //循环每个函数并执行，结果都是10。因为每个函数都引用着保存变量i的同一个变量对象，所以i是10
+    for (var j of createFunctions()) {
+        console.log(j());
+    }
+
+    //可以这样强制修改
+    function createFunctions2() {
+        var result = new Array();
+        for (var i = 0; i < 10; i++) {
+            result[i] = function (num) {
+                return function () {
+                    return num;
+                };
+            };
+        }
+        return result;
+    }
+
+    //也可以用更简洁的方式
+    function createFunctions3() {
+        var result = new Array();
+        for (var i = 0; i < 10; i++) {
+            result[i] = (function () {
+                return i;
+            })();
+        }
+        return result;
+    }
+
+
+    //for .. in 是返回index
+    // for (var i in createFunctions()) {
+    //     console.log(i);
+    // }
+</script>
+</body>
+</html>

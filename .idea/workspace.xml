@@ -2,21 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9861c14-2b38-46fc-8ee9-173793116d4c" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.2.4 组合使用构造函数模式和原型模式.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.2.5 动态原型模式.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.2.6 寄生构造函数模式.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.2.7 稳妥构造函数模式.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.3.1 原型链.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.3.2 借用构造函数.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.3.3 组合继承.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.3.4 原型式继承.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.3.5 寄生式继承.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.3.6  寄生组合式继承.html" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.1 递归.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2 闭包.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2.1 闭包与变量.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2.2 关于this对象.html" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.1 理解对象.html" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.2.1 理解对象.html" />
-      <change beforePath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.2 创建对象.html" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.2.2 创建对象.html" />
-      <change beforePath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.3 原型模式.html" afterPath="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.2.3 原型模式.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -39,11 +28,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="7.1 递归.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="7.1 递归.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.1 递归.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="61" lean-forward="false" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+            <state relative-caret-position="162">
+              <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="7.2 闭包.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2 闭包.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="7.2.1 闭包与变量.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2.1 闭包与变量.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="648">
+              <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="7.2.2 关于this对象.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2.2 关于this对象.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="720">
+              <caret line="40" column="66" lean-forward="false" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -65,9 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/智能社js/13 三目运算符.html" />
-        <option value="$PROJECT_DIR$/智能社js/14 continue break.html" />
-        <option value="$PROJECT_DIR$/智能社js/15 什么是真什么是假.html" />
         <option value="$PROJECT_DIR$/智能社js/16 可变参数.html" />
         <option value="$PROJECT_DIR$/智能社js/17 取非行间样式.html" />
         <option value="$PROJECT_DIR$/智能社js/18 json和数组循环.html" />
@@ -116,6 +132,9 @@
         <option value="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.3.5 寄生式继承.html" />
         <option value="$PROJECT_DIR$/JavaScript高级程序设计/6 面向对象的程序设计/6.3.6  寄生组合式继承.html" />
         <option value="$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.1 递归.html" />
+        <option value="$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2 闭包.html" />
+        <option value="$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2.1 闭包与变量.html" />
+        <option value="$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2.2 关于this对象.html" />
       </list>
     </option>
   </component>
@@ -284,7 +303,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6781293" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6772592" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2764977" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3293617" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -312,30 +331,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/智能社js/15 什么是真什么是假.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/智能社js/16 可变参数.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="27" lean-forward="false" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/智能社js/17 取非行间样式.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="38" lean-forward="false" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/智能社js/18 json和数组循环.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -711,8 +706,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.1 递归.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="33" column="61" lean-forward="false" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+        <state relative-caret-position="162">
+          <caret line="9" column="23" lean-forward="true" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2 闭包.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="7" lean-forward="true" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2.1 闭包与变量.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="648">
+          <caret line="36" column="16" lean-forward="false" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/JavaScript高级程序设计/7 函数表达式/7.2.2 关于this对象.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="720">
+          <caret line="40" column="66" lean-forward="false" selection-start-line="40" selection-start-column="66" selection-end-line="40" selection-end-column="66" />
           <folding />
         </state>
       </provider>

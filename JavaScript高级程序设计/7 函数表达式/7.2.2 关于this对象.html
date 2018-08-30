@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //this对象是在运行时基于函数的执行环境绑定的
+    //匿名函数的执行环境具有全局性，所以这个this指向window
+    var name = 'the window';
+    var o = {
+        name: 'my object',
+        getNameFunc: function () {
+            return function () {
+                return this.name;
+            };
+        }
+    };
+    console.log(o.getNameFunc()());         //the window,直接执行匿名函数
+
+    //可以通过将this赋值给其他变量
+    var o2 = {
+        name: 'my object',
+        getNameFunc: function () {
+            //this在函数返回之后，仍然引用着object
+            var that = this;
+            return function () {
+                return that.name;
+            }
+        }
+    };
+    console.log(o2.getNameFunc()());        //my object
+
+    var object = {
+        name: 'object',
+        getName: function () {
+            return this.name;
+        }
+    };
+    //先执行赋值语句，再调用赋值后的结果。因为这个赋值表达式的值是函数本身，所以this的值不能得到维持，这是为什么呢！！？？
+    console.log((object.getName = object.getName)());       //the window????
+</script>
+</body>
+</html>

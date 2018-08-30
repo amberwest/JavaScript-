@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //递归阶乘函数
+    function fac(num) {
+        if (num <= 1) {
+            return 1;
+        }
+        else {
+            return num * fac(num - 1)
+        }
+    }
+
+    //以下代码会使函数出错。将函数赋给变量后设置为null
+    var anotherFac = fac;
+    fac = null;
+    console.log(fac(4));        //出错
+
+    //使用arguments.callee就可以解决上面的问题
+    function fac2(num) {
+        if (num <= 1) {
+            return 1;
+        } else {
+            //arguments.callee是一个指向正在执行的函数的指针
+            return num * arguments.callee(num - 1);
+        }
+    }
+
+    //在严格模式下，arguments.callee还是会出错，所以要用下面这种方法: 创建一个f()命名函数表达式
+    var fac3 = (function f(num) {
+        if (num <= 1) {
+            return 1;
+        } else {
+            return num * f(num - 1)
+        }
+    })
+</script>
+</body>
+</html>

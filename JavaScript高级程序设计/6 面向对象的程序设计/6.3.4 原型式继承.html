@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function object(o) {
+        function F() {
+        }
+
+        F.prototype = o;
+        return new F();
+    }
+
+    var person = {
+        name: 'Nick',
+        friends: ['bob', 'ed']
+    };
+
+    //anotherPerson等都是用person作为原型，所以就包含了一个基本类型值属性和一个引用类型值属性
+    //修改了名字，但是friends都是四个了
+    var anotherPerson = object(person);
+    anotherPerson.name = 'Greg';
+    anotherPerson.friends.push('Em');
+
+    //修改了名字，但是friends都是四个了
+    var yetAnotherPerson = object(person);
+    yetAnotherPerson.name = 'Linda';
+    yetAnotherPerson.friends.push('teddy');
+    console.log(person.friends);        //'bob', 'ed','Em','teddy'
+</script>
+</body>
+</html>

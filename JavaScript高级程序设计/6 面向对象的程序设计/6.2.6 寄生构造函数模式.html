@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //跟工厂模式一样的
+    //构造函数不返回值时，默认会返回新对象实例
+    // 通过在构造函数的末尾添加一个return语句，可以重写调用构造函数时返回的值
+    function Person(name, age, job) {
+        var o = new Object();
+        o.name = name;
+        o.age = age;
+        o.job = job;
+        o.sayName = function () {
+            console.log(this.name);
+        };
+        return o;
+    }
+
+    var friend = new Person('Nick', 28, 'Doctor');
+    friend.sayName();
+
+    //应用
+    function SpecialArray() {
+        //创建数组
+        var values = new Array();
+        //添加值，将默认参数都添加到数组
+        values.push.apply(values, arguments);
+        //添加方法，将数组值以'|'分隔
+        values.toPipedString = function () {
+            return this.join('|');
+        };
+        //返回数组
+        return values
+    }
+
+    var colors = new SpecialArray('red', 'yellow', 'white', 'black');
+    console.log(colors.toPipedString());        //"red|yellow|white|black"
+
+    /*
+    关于寄生构造函数模式：
+    1、返回的对象与构造函数或者与构造函数的原型属性之间没有关系，即构造函数返回的对象与在构造函数外部创建的对象没有什么不同
+    2、不能依赖instanceof操作符来确定对象类型
+    总结：尽量使用其他模式构造函数，不要使用这种模式
+     */
+</script>
+</body>
+</html>

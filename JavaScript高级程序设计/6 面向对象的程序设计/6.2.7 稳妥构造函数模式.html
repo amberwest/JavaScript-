@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function Person(name, age, job) {
+        //创建要返回的对象
+        var o = new Object();
+
+        //可以在这里定义私有变量和函数
+
+        //添加方法
+        o.sayName = function () {
+            console.log(name);
+        };
+        //返回对象
+        return o;
+    }
+
+    //除了调用sayName()方法外，没有别的方式可以访问其数据成员
+    var friend = Person('Nick', 28, 'Doctor');
+    console.log(friend.name);       //undefined
+    friend.sayName();
+</script>
+</body>
+</html>

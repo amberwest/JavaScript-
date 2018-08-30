@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //实现原型链的一种基本模式
+    //定义类型
+    function SuperType() {
+        //属性
+        this.property = true;
+    }
+
+    //方法
+    SuperType.prototype.getSuperValue = function () {
+        return this.property;
+    };
+
+    //定义另一个类型
+    function SubType() {
+        //属性
+        this.subproperty = false;
+    }
+
+    //属性和方法：继承了SuperType，通过创建SuperType的实例
+    SubType.prototype = new SuperType();
+    //方法
+    //这里不能使用字面量添加新方法，因为会重写原型链，导致上一行代码无效
+    SubType.prototype.getSuperValue = function () {
+        return this.subproperty;
+    };
+
+    //重写超类型中的方法，一定要放在替换原型的语句之后
+    SubType.prototype.getSuperValue = function () {
+        return false;
+    };
+    var instance = new SubType();
+    console.log(instance.getSuperValue());      //true，继承超类型。重写之后就变为false，
+</script>
+</body>
+</html>

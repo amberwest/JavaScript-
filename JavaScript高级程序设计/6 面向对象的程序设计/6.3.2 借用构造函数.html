@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // function SuperType() {
+    //     this.colors = ['red', 'blue', 'green'];
+    // }
+    //
+    // function SubType() {
+    //     //继承了SuperType，还可以使用apply()方法。
+    //     SuperType.call(this);
+    //     // SuperType.apply(this);
+    // }
+    //
+    // var instance1 = new SubType();
+    // instance1.colors.push('black');
+    // console.log(instance1.colors);      //['red', 'blue', 'green','black']
+    //
+    // var instance2 = new SubType();
+    // console.log(instance2.colors);      //['red', 'blue', 'green']
+
+    //相对于原型链，还可以传递参数
+    function SuperType(name) {
+        this.colors = ['red', 'blue', 'green'];
+        this.name = name;
+    }
+
+    function SubType() {
+        //继承了SuperType，同时也传递了参数
+        SuperType.call(this, 'Nick');
+
+        //实例属性
+        this.age = 28;
+    }
+
+    var instance1 = new SubType();
+    console.log(instance1.name);
+    console.log(instance1.age);
+    //借用构造函数，方法都在构造函数中定义，所以没办法复用函数。也很少单独使用
+    // 在超类型的原型中定义的方法，对子类型而言也是不可见的，因此所有类型都只能使用构造函数模式。
+
+
+
+</script>
+</body>
+</html>

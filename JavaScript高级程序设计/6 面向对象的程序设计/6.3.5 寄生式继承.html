@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function createAnother(o) {
+        var clone = Object(o);        //通过调用函数创建一个新对象，不一定是Object函数，任何能够返回新对象的函数都可以
+        clone.sayHi = function () {       //以某种方式来增加这个对象
+            console.log('Hi');
+        };
+        return clone;           //返回这个对象
+    }
+
+    var person = {
+        name: 'Nick',
+        friends: ['ed', 'em']
+    };
+    var anotherPerson = createAnother(person);
+    anotherPerson.sayHi();
+</script>
+</body>
+</html>
